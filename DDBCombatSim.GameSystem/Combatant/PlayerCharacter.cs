@@ -1,7 +1,6 @@
 ﻿namespace DDBCombatSim.GameSystem.Combatant;
 
 using DDBCombatSim.GameSystem.Stats;
-using DDBCombatSim.GameSystem.Utils;
 
 public class PlayerCharacter : CombatantBase
 {
@@ -9,17 +8,8 @@ public class PlayerCharacter : CombatantBase
         : base(id, name, ECreatureType.Humanoid, armorClass, maxHp, currentHp, tempHp, abilityScores, savingThrows)
     {
         Level = level;
+        ProficiencyBonus = 2 + (Level - 1) / 4;
     }
 
     public int Level { get; set; }
-
-    public int ProficiencyBonus => 2 + (Level - 1) / 4;
-
-    public override IntStat GetAbilityModifier(EAbility ability)
-    {
-        var result = new IntStat("Base", 0);
-        result.AddOtherAsModifier(AbilityScores[(int)ability]);
-        result.Modifiers.Add(new Modifier<int>(this, "Proficiency Bonus", ProficiencyBonus));
-        return result;
-    }
 }

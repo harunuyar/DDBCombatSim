@@ -29,5 +29,8 @@ public interface ICombatant : IBattlefieldObject
     ConsumableStat[] SpellSlots { get; }
     List<EffectInstance> ActiveEffects { get; }
     List<EffectInstance> CausedEffects { get; }
+    int ProficiencyBonus { get; }
     IntStat GetAbilityModifier(EAbility ability);
+    IntStat GetWeaponAttackRollModifier(EWeaponProperty weaponProperty, ERange range);
+    IntStat GetWeaponDamageRollModifier(EWeaponProperty weaponProperty, ERange range, EWeaponHand weaponHand);
 }

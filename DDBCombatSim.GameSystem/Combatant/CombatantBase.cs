@@ -73,8 +73,56 @@ public abstract class CombatantBase : ICombatant, IDndObject
     public EDamageType Resistances { get; set; }
     public EDamageType Immunities { get; set; }
     public EDamageType Vulnurabilities { get; set; }
-
     public ConsumableStat[] SpellSlots { get; }
+    public int ProficiencyBonus { get; set; }
 
-    public abstract IntStat GetAbilityModifier(EAbility ability);
+    public IntStat GetAbilityModifier(EAbility ability)
+    {
+        var result = new IntStat("Base", 0);
+        result.AddOtherAsModifier(AbilityScores[(int)ability]);
+        result.Modifiers.Add(new Modifier<int>(this, "Proficiency Bonus", ProficiencyBonus));
+        return result;
+    }
+
+    public IntStat GetWeaponAttackRollModifier(EWeaponProperty weaponProperty, ERange range)
+    {
+        var result = GetWeaponDamageRollModifier(weaponProperty, range, EWeaponHand.Primary);
+        result.Modifiers.Add(new Modifier<int>(this, "Proficiency Bonus", ProficiencyBonus));
+        return result;
+    }
+
+    public IntStat GetWeaponDamageRollModifier(EWeaponProperty weaponProperty, ERange range, EWeaponHand weaponHand)
+    {
+        var result = new IntStat("Base", 0);
+
+        if (weaponHand != EWeaponHand.Offhand)
+        {
+            if (range == ERange.Melee)
+            {
+                if (weaponProperty.HasFlag(EWeaponProperty.Finesse))
+                {
+                    var str = AbilityScores[(int)EAbility.Strength];
+                    var dex = AbilityScores[(int)EAbility.Dexterity];
+                    if (str.Value > dex.Value)
+                    {
+                        result.AddOtherAsModifier(str);
+                    }
+                    else
+                    {
+                        result.AddOtherAsModifier(dex);
+                    }
+                }
+                else
+                {
+                    result.AddOtherAsModifier(AbilityScores[(int)EAbility.Strength]);
+                }
+            }
+            else if (range == ERange.Ranged)
+            {
+                result.AddOtherAsModifier(AbilityScores[(int)EAbility.Dexterity]);
+            }
+        }
+
+        return result;
+    }
 }
