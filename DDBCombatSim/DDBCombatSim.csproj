@@ -9,17 +9,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Action\Actions\**" />
-    <Content Remove="Action\Actions\**" />
-    <EmbeddedResource Remove="Action\Actions\**" />
-    <None Remove="Action\Actions\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="LiteDB" Version="5.0.21" />
     <PackageReference Include="Microsoft.AspNetCore.SignalR" Version="1.2.0" />
     <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DDBCombatSim.GameSystem\DDBCombatSim.GameSystem.csproj" />
+    <ProjectReference Include="..\DDBCombatSim.Predefined5E2024\DDBCombatSim.Predefined5E2024.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,6 +5,10 @@ VisualStudioVersion = 17.11.35431.28
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDBCombatSim", "DDBCombatSim\DDBCombatSim.csproj", "{D2A14D2E-0F15-4B76-966A-A13A437E462D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDBCombatSim.GameSystem", "DDBCombatSim.GameSystem\DDBCombatSim.GameSystem.csproj", "{BF9EB727-ECA8-4D7D-B376-560B97C611B5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DDBCombatSim.Predefined5E2024", "DDBCombatSim.Predefined5E2024\DDBCombatSim.Predefined5E2024.csproj", "{9511948D-1B5E-4EC6-AEE0-EEA40F7AFE46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{D2A14D2E-0F15-4B76-966A-A13A437E462D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D2A14D2E-0F15-4B76-966A-A13A437E462D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D2A14D2E-0F15-4B76-966A-A13A437E462D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF9EB727-ECA8-4D7D-B376-560B97C611B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF9EB727-ECA8-4D7D-B376-560B97C611B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF9EB727-ECA8-4D7D-B376-560B97C611B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF9EB727-ECA8-4D7D-B376-560B97C611B5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9511948D-1B5E-4EC6-AEE0-EEA40F7AFE46}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9511948D-1B5E-4EC6-AEE0-EEA40F7AFE46}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9511948D-1B5E-4EC6-AEE0-EEA40F7AFE46}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9511948D-1B5E-4EC6-AEE0-EEA40F7AFE46}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

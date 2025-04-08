@@ -1,8 +1,8 @@
 ﻿namespace DDBCombatSim.Ddb;
 
-using DDBCombatSim.Combat;
-using DDBCombatSim.Combatant;
-using DDBCombatSim.Signal;
+using DDBCombatSim.GameSystem.Combat;
+using DDBCombatSim.GameSystem.Combatant;
+using DDBCombatSim.GameSystem.Signal;
 
 public class DdbImporter
 {

@@ -1,8 +1,6 @@
 
 namespace DDBCombatSim;
 
-using DDBCombatSim.Combat;
-
 public class Program
 {
     public static void Main(string[] args)
@@ -10,7 +8,6 @@ public class Program
         var builder = WebApplication.CreateBuilder(args);
 
         builder.Services.AddSignalR();
-        builder.Services.AddSingleton<CombatManager>();
 
         builder.Services.AddControllers();
 
